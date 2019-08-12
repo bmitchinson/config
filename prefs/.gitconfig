@@ -8,11 +8,13 @@
 	email = mitchinson.dev@gmail.com
 [core]
 	editor = nano
-[alias]
 	cm = commit -m
 	co = checkout
 	br = branch
 	st = status
-	slog = log --decorate --oneline
+	d = diff
 	plog = log --graph --abbrev-commit --decorate
+	slog = log --decorate --oneline
 	disall = git checkout -- .
+[color]
+	ui = true
