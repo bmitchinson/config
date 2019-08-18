@@ -8,6 +8,7 @@
 	email = mitchinson.dev@gmail.com
 [core]
 	editor = nano
+[alias]
 	cm = commit -m
 	co = checkout
 	br = branch

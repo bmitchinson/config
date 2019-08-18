@@ -2,10 +2,10 @@
 ; https://www.top-password.com/blog/disable-specific-windows-key-shortcut/
 ; Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
 
+; alt + ...
 ; t term
 ; b brave
 ; c cal
-; p pulse
 ; n notes (tusk)
 ; v vscode
 ; e new explorer window
@@ -39,7 +39,7 @@
     }
     else
     {
-        Run "C:/Program Files (x86)/BraveSoftware/Brave-Browser/Application"
+        Run "C:/Program Files (x86)/BraveSoftware/Brave-Browser/Application/brave.exe"
     }
     SetTitleMatchMode, 1
     exit
