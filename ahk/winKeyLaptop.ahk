@@ -27,7 +27,7 @@
     exit
 
 ; Brave
-!f::
+!b::
     ; it always has the "- Brave" part in it
     SetTitleMatchMode, 2   ;window title can contain WinTitle anywhere inside it to be a match
     IfWinExist, - Brave
@@ -59,19 +59,9 @@
     }
     exit
 
-; Pulse Messages
-!p::
-    IfWinExist, Pulse SMS
-    {
-        IfWinActive, Pulse SMS
-            WinClose Pulse SMS
-        else
-            WinActivate Pulse SMS
-    }
-    else
-    {
-        Run "C:\Users\Ben\AppData\Local\Programs\pulse-sms\Pulse SMS.exe"
-    }
+; Minimize
+!m::
+    WinMinimize A
     exit
 
 ; Notes - Tusk
@@ -111,7 +101,10 @@
     WinActivate, Program Manager ; focus desktop
     exit
 	
-#e::
+!e::
 	Run explorer
 	exit
 
+#e::
+	Run explorer
+	exit
