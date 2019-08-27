@@ -1,4 +1,4 @@
-cd Documents/GitHub
+[ -d "Documents/GitHub" ] && cd Documents/GitHub
 echo "SUP NERD."
 export PATH=$PATH:/usr/bin/start:/c/"Program Files"/Java/jdk1.8.0_171
 alias bashrc='code ~/.bashrc'
