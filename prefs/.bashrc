@@ -1,4 +1,4 @@
-cd Documents/GitHub
+[ -d "Documents/GitHub" ] && cd Documents/GitHub
 echo "SUP NERD."
 export PATH=$PATH:/usr/bin/start
 alias bashrc='code ~/.bashrc'

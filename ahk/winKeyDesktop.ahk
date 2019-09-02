@@ -95,6 +95,15 @@
     WinMinimizeAll
     WinActivate, Program Manager ; focus desktop
     exit
+
+!e::
+	Run explorer
+	exit
+    
+; Minimize
+!m::
+    WinMinimize A
+    exit
 	
 #e::
 	Run explorer
