@@ -16,6 +16,6 @@
 	d = diff
 	plog = log --graph --abbrev-commit --decorate
 	slog = log --decorate --oneline
-	disall = git checkout -- .
+	discard = git checkout -- .
 [color]
 	ui = true
