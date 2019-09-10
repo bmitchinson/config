@@ -22,7 +22,7 @@
     }
     else
     {
-        Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_0.3.2171.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+        Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_0.4.2382.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
     }
     exit
 
