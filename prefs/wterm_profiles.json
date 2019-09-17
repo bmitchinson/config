@@ -190,6 +190,26 @@
             "useAcrylic" : true
         },
         {
+            "acrylicOpacity" : 0.75,
+            "backgroundImage" : "ms-appdata:///roaming/bg.png",
+            "backgroundImageOpacity" : 0.75,
+            "closeOnExit" : true,
+            "colorScheme" : "Ben",
+            "commandline" : "wsl.exe -d Ubuntu-18.04",
+            "cursorColor" : "#FFFFFF",
+            "cursorShape" : "bar",
+            "fontFace" : "Consolas",
+            "fontSize" : 10,
+            "guid" : "{09691bc7-736e-4600-878c-10e99e934f31}",
+            "historySize" : 9001,
+            "icon" : "C:/ubuntuLogo.png",
+            "name" : "Ubuntu",
+            "padding" : "0, 0, 0, 0",
+            "snapOnInput" : true,
+            "startingDirectory" : "%USERPROFILE%",
+            "useAcrylic" : true
+        },
+        {
             "acrylicOpacity" : 0.5,
             "background" : "#012456",
             "closeOnExit" : true,
