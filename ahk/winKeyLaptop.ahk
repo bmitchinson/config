@@ -64,18 +64,18 @@
     WinMinimize A
     exit
 
-; Notes - Tusk
+; Notes - notion
 !n::
-    IfWinExist, Tusk
+    IfWinExist, todos
     {
-        IfWinActive, Tusk
-            WinMinimize Tusk
+        IfWinActive, todos
+            WinMinimize todos
         else
-            WinActivate Tusk
+            WinActivate todos
     }
     else
     {
-        Run "C:\Users\Ben\Google Drive\Small Programs\tusk-0.23.0.exe"
+        Run "C:\Users\Ben\AppData\Local\Programs\Notion"
     }
     exit
 
