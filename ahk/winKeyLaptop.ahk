@@ -75,7 +75,7 @@
     }
     else
     {
-        Run "C:\Users\Ben\AppData\Local\Programs\Notion"
+        Run "C:\Users\Ben\AppData\Local\Programs\Notion\Notion.exe"
     }
     exit
 
