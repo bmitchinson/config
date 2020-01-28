@@ -8,6 +8,7 @@
 	email = mitchinson.dev@gmail.com
 [core]
 	editor = nano
+	excludesfile = /Users/bmitchinson/.gitignore_global
 [alias]
 	cm = commit -m
 	co = checkout
@@ -16,6 +17,6 @@
 	d = diff
 	plog = log --graph --abbrev-commit --decorate
 	slog = log --decorate --oneline
-	discard = git checkout -- .
+	subs = pull --recurse-submodules
 [color]
 	ui = true
