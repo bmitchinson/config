@@ -6,11 +6,13 @@ export PATH=$HOME/bin:/usr/local/bin:/Users/bmitchinson/.local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/bmitchinson/.oh-my-zsh"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -36,13 +38,6 @@ alias dp='docker ps'
 alias pub='pbcopy < ~/.ssh/id_rsa.pub'
 alias ip='ipconfig getifaddr en0'
 
-# Projects
-alias haiti='cd ~/repos/hdhs'
-alias sep='cd ~/repos/sep'
-
-# Haiti
-alias bashhaiti='docker exec -it haiti_pwa bash'
-
 # Docker Generic
 # https://stackoverflow.com/a/42116347/10007258
 rmcontainers() {
@@ -59,35 +54,19 @@ nukedocker() {
     docker rmi -f $(docker images -qa)
 }
 
-# Haiti
-alias starthaiti='docker-compose -f ~/repos/hdhs/dev-docker-compose.yml up'
-alias killhaiti='docker-compose -f ~/repos/hdhs/dev-docker-compose.yml down'
-
-alias ppc='cd ~/repos/ppc'
-alias ppctheme='cd ~/repos/ppc/app/docroot/themes/custom/ppc'
-alias startppc='docker-compose -f docker-compose-local.yml up -d'
-alias bashppc='docker exec -it ppc_d8 bash'
-alias killppc='docker kill ppc_d8 ppc_d8_db'
-
-# Classes
-alias plc='cd ~/repos/plc'
-alias os='cd ~/repos/os/hw2/bmitchinson'
-function runsep {
-  npx cypress run --spec "$1"
-}
-
 # Postgres
 alias startpsql='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppsql='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+export EDITOR="/usr/bin/nano"
+export PSQL_USERNAME="bmitchinson"
 
-# Version Managers
+# Path
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:"/Users/bmitchinson/Library/Python/3.8/bin"
-export PATH=$PATH:"/Applications/Emacs.app/Contents/MacOS"
-export PATH=$PATH:"~/repos/plc/ial"
 export PATH=$PATH:"~/bin"
-export EDITOR="/usr/bin/nano"
+
+# Version Managers
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -100,3 +79,6 @@ echo "SUP NERD."
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 # added by travis gem
 [ -f /Users/bmitchinson/.travis/travis.sh ] && source /Users/bmitchinson/.travis/travis.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
