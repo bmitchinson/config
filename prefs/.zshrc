@@ -1,5 +1,9 @@
 # defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
+# VSCode Settings Sync: https://gist.github.com/bmitchinson/d6e2b4d61b49fb47e91b37171ab5106b
+# https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
+# Will eventually use native vscode settings sync but, thats in preview as of apr 20201
+
 # https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961
 # Zsh Config
 # If you come from bash you might have to change your $PATH.
