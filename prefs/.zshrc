@@ -48,6 +48,7 @@ alias dp='docker ps'
 alias pub='pbcopy < ~/.ssh/id_rsa.pub'
 alias ip='ipconfig getifaddr en0'
 alias beep='echo -e "\a"'
+alias vailvpn='sudo openconnect --user bmitchinson --authgroup DUO --protocol=anyconnect vpn-sf.vailsys.com'
 
 # Docker Generic
 # https://stackoverflow.com/a/42116347/10007258
