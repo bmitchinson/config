@@ -1,3 +1,5 @@
+# defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
 # https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961
 # Zsh Config
 # If you come from bash you might have to change your $PATH.
@@ -5,18 +7,20 @@ export PATH=$HOME/bin:/usr/local/bin:/Users/bmitchinson/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/bmitchinson/.oh-my-zsh"
+ZSH_DISABLE_COMPFIX="true"
+source $ZSH/oh-my-zsh.sh
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
-source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_DIR_HOME_BACKGROUND='lightskyblue1'
@@ -29,6 +33,8 @@ POWERLEVEL9K_VCS_CLEAN_BACKGROUND='palegreen3'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='mediumorchid'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='indianred'
 
+DEV_DATABASE_URL=postgres://bmitchinson:asdf@127.0.0.1:port/blueberry_dev
+
 alias zshconfig='code ~/.zshrc'
 alias gitconfig='code ~/.gitconfig'
 alias npmglobal='npm ls -g --depth 0'
@@ -37,6 +43,7 @@ alias c='clear'
 alias dp='docker ps'
 alias pub='pbcopy < ~/.ssh/id_rsa.pub'
 alias ip='ipconfig getifaddr en0'
+alias beep='echo -e "\a"'
 
 # Docker Generic
 # https://stackoverflow.com/a/42116347/10007258
@@ -63,22 +70,61 @@ export PSQL_USERNAME="bmitchinson"
 
 # Path
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH=$PATH:"/Users/bmitchinson/Library/Python/3.8/bin"
+# export PATH=$PATH:"/Users/bmitchinson/Library/Python/3.8/bin"
+# export PATH=$PATH:"/Users/bmitchinson/Library/Python/3.7/bin"
 export PATH=$PATH:"~/bin"
+# export PATH=$PATH:"~/.gem"
 
 # Version Managers
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# export GEM_HOME="~/.gem"
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# NVM Defaults
+# alias vailnvm='nvm alias default 14.3.0 && nvm use default'
+alias grazenvm='nvm alias default 12 && nvm use default'
+alias mitchinsonnvm='nvm alias default 12.22.1 && nvm use default'
 
-# defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool FALSE
+grazelinks() {
+    open 'https://docs.google.com/spreadsheets/d/1btJkawaXHtMJcSUJZaKFjtDi29ryrhH0FzhhQb2LHv0/edit?ts=5ebdb402#gid=1769408458'
+    open https://grazeanalytics.atlassian.net/jira/software/projects/GRZ/boards/24
+    open http://localhost:3001
+}
 
+vaillinks() {
+    open 'https://tickets.vailsys.com/secure/RapidBoard.jspa?rapidView=741'
+    open 'https://gitlab.vailsys.com/wavrunner/web'
+}
+
+workgraze() {
+    cd ~/repos/graze/apricot-blueberry
+    grazenvm
+    code apricot
+    code blueberry
+    grazelinks
+    open -a GitKraken
+    open -a Notion
+    open -a Slack
+    ttab -G eval "cd blueberry/scripts; ./reset_db_local_dev.sh"
+    ttab -G eval "cd apricot; export PORT=3000; npm run start"
+}
+
+postvail() {
+    open -a "Sublime Text" ~/repos/personal/Mitchinson.dev/source/_posts/vail-march-2021.md
+}
+
+alias planttext="open ~/Documents/PlantText/guide.pdf"
+
+alias worksite='open notion://www.notion.so/bmitchinson/mitchinson-dev-a71704b052744c6598407d83235b5a0b'
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 echo "SUP NERD."
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+# [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 # added by travis gem
-[ -f /Users/bmitchinson/.travis/travis.sh ] && source /Users/bmitchinson/.travis/travis.sh
+# [ -f /Users/bmitchinson/.travis/travis.sh ] && source /Users/bmitchinson/.travis/travis.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
