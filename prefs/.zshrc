@@ -1,9 +1,5 @@
 # defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
-# VSCode Settings Sync: https://gist.github.com/bmitchinson/d6e2b4d61b49fb47e91b37171ab5106b
-# https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
-# Will eventually use native vscode settings sync but, thats in preview as of apr 20201
-
 # https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961
 # Zsh Config
 # If you come from bash you might have to change your $PATH.
@@ -11,20 +7,35 @@ export PATH=$HOME/bin:/usr/local/bin:/Users/bmitchinson/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/bmitchinson/.oh-my-zsh"
-ZSH_DISABLE_COMPFIX="true"
-source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
+source $ZSH/oh-my-zsh.sh
+ZSH_DISABLE_COMPFIX="true"
+
+# Preferred editor for local and remote sessions
+export EDITOR='code'
+# if [[ -n $SSH_CONNECTION ]]; then
+  # export EDITOR='vim'
+# else
+  # export EDITOR='mvim'
+# fi
+
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_DIR_HOME_BACKGROUND='lightskyblue1'
@@ -48,7 +59,7 @@ alias dp='docker ps'
 alias pub='pbcopy < ~/.ssh/id_rsa.pub'
 alias ip='ipconfig getifaddr en0'
 alias beep='echo -e "\a"'
-alias vailvpn='sudo openconnect --user bmitchinson --authgroup DUO --protocol=anyconnect vpn-sf.vailsys.com'
+alias vpnconnect='sudo openconnect --user bmitchinson --authgroup DUO --protocol=anyconnect vpn-sf.vailsys.com'
 
 # Docker Generic
 # https://stackoverflow.com/a/42116347/10007258
@@ -75,17 +86,13 @@ export PSQL_USERNAME="bmitchinson"
 
 # Path
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-# export PATH=$PATH:"/Users/bmitchinson/Library/Python/3.8/bin"
-# export PATH=$PATH:"/Users/bmitchinson/Library/Python/3.7/bin"
-export PATH=$PATH:"~/bin"
-# export PATH=$PATH:"~/.gem"
+# export PATH=$PATH:"~/bin"
 
-# Version Managers
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# export GEM_HOME="~/.gem"
+# Version Managers + Brew
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # NVM Defaults
 # alias vailnvm='nvm alias default 14.3.0 && nvm use default'
@@ -124,12 +131,4 @@ alias planttext="open ~/Documents/PlantText/guide.pdf"
 
 alias worksite='open notion://www.notion.so/bmitchinson/mitchinson-dev-a71704b052744c6598407d83235b5a0b'
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 echo "SUP NERD."
-# [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-# added by travis gem
-# [ -f /Users/bmitchinson/.travis/travis.sh ] && source /Users/bmitchinson/.travis/travis.sh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
-
