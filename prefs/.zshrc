@@ -18,7 +18,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source "${ZSH}/custom/themes/powerlevel10k/zsh-autosuggestions.zsh/powerlevel10k.zsh-theme"
+source "${ZSH}/custom/themes/powerlevel10k/powerlevel10k.zsh-theme"
 source "${ZSH}/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZSH}/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
