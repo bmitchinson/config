@@ -1,4 +1,4 @@
-export config_repo="${HOME}/repos/config"
+[ -z "$config_repo" ] && export config_repo="${HOME}/repos/config"
 
 echo "🗂 - Backing up files before restore"
 

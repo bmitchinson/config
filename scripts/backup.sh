@@ -1,4 +1,4 @@
-export config_repo="${HOME}/repos/config"
+[ -z "$config_repo" ] && export config_repo="${HOME}/repos/config"
 
 cp "${HOME}/.gitconfig" $config_repo/prefs/.gitconfig
 cp "${HOME}/.gitignore_global" $config_repo/prefs/.gitignore_global
