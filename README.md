@@ -15,7 +15,7 @@ Run the following for ohmyzsh before setup:
 ### Frequent Applications:
 
 - iTerm 2
-- VSCode
+- VSCode (Synced with built in settings sync[https://code.visualstudio.com/docs/editor/settings-sync])
 - Brave
 - Gitkraken
 - Bear
