@@ -20,6 +20,4 @@ cp $config_repo/prefs/.p10k.zsh "${HOME}/.p10k.zsh"
 
 cp $config_repo/prefs/.zshrc "${HOME}/.zshrc"
 
-source ~/.zshrc
-
-echo "✅ - Done"
+echo "✅ - Done! Reopen your terminal"
