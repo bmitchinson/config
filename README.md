@@ -4,10 +4,15 @@ My configuration for zsh + git.
 
 Setup is MacOS / Linux supported
 
-Run the following for ohmyzsh before setup:
-`sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+### Instructions
 
-Frequent Applications:
+Run the following for ohmyzsh before setup:
+
+- `git clone git@github.com:bmitchinson/config.git ~/repos`
+- `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- restart your shell so it loads ohmyzsh before running setup
+
+### Frequent Applications:
 
 - iTerm 2
 - VSCode

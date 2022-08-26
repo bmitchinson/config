@@ -1,6 +1,5 @@
-echo "Did you install ohmyzsh first? (check readme)"
-
 echo "👷‍♂️ - Running setup"
+echo "Did you install ohmyzsh first? (check readme)"
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
