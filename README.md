@@ -34,3 +34,9 @@ Run the following for ohmyzsh before setup:
   - Google calendar
   - Hopscotch
   - photopea
+  - Figma
+  
+  
+  ### Fonts
+  - https://github.com/nerdypepper/scientifica/blob/master/INSTALL.md
+  - https://github.com/nerdypepper/scientifica
