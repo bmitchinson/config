@@ -15,7 +15,7 @@ Run the following for ohmyzsh before setup:
 ### Frequent Applications:
 
 - [iTerm 2](https://iterm2.com/)
-- VSCode (Synced with built in settings sync[https://code.visualstudio.com/docs/editor/settings-sync])
+- VSCode ([Synced with built in settings sync](https://code.visualstudio.com/docs/editor/settings-sync))
 - [Brave](https://brave.com/)
 - [Gitkraken](https://www.gitkraken.com/)
 - [Bear](https://apps.apple.com/us/app/bear-markdown-notes/id1016366447)
@@ -25,7 +25,7 @@ Run the following for ohmyzsh before setup:
 - [CopyClip](https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12)
 - [Rectangle](https://rectangleapp.com/)
 - [Hidden Bar](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12)
-- [The Unarchiver]
+- [The Unarchiver](https://theunarchiver.com/)
 - [Tuple](https://theunarchiver.com/)
 - [1password](https://1password.com/)
 - [Bluesnooze](https://github.com/odlp/bluesnooze)
