@@ -36,6 +36,7 @@ Run the following for ohmyzsh before setup:
 - [Soulver 3](https://soulver.app/)
 - [Spotify](https://www.spotify.com/us/download/android/)
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630?mt=12)
+- [Local batch HEIC image conversion](https://imazing.com/converter/download)
 - PWA for
   - Notion
   - Google Calendar
