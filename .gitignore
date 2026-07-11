@@ -1,3 +1,4 @@
 .pi/agent/auth.json
 .pi/agent/bin
 .pi/agent/sessions/
+*.bak

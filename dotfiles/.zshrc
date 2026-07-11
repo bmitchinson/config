@@ -81,7 +81,29 @@ alias bunglobal='bun pm ls -g'
 
 alias o='open .'
 alias c='clear'
-alias lg='lazygit'
+namespace() {
+  if [[ -z "$HERDR_ENV" || -z "$HERDR_WORKSPACE_ID" ]]; then
+    echo "namespace: not running inside Herdr" >&2
+    return 1
+  fi
+  if [[ $# -eq 0 ]]; then
+    echo "usage: namespace <name>" >&2
+    return 2
+  fi
+  herdr workspace rename "$HERDR_WORKSPACE_ID" "$*"
+}
+nametab() {
+  if [[ -z "$HERDR_ENV" || -z "$HERDR_TAB_ID" ]]; then
+    echo "nametab: not running inside Herdr" >&2
+    return 1
+  fi
+  if [[ $# -eq 0 ]]; then
+    echo "usage: nametab <name>" >&2
+    return 2
+  fi
+  herdr tab rename "$HERDR_TAB_ID" "$*"
+}
+alias lg='nametab lazygit && lazygit'
 alias dps='docker ps'
 
 alias beep='echo -e "\a"'
