@@ -1,0 +1,25 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Ben Mitchinson
+	email = mitchinson.dev@gmail.com
+[core]
+	editor = nano
+	excludesfile = /Users/bmitchinson/.gitignore_global
+	ignorecase = false
+[alias]
+	cm = commit -m
+	co = checkout
+	br = branch
+	st = status
+	d = diff
+	plog = log --graph --abbrev-commit --decorate
+	slog = log --decorate --oneline
+	subs = pull --recurse-submodules
+[color]
+	ui = true
+[init]
+	defaultBranch = main

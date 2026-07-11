@@ -1,0 +1,94 @@
+#!/bin/zsh
+set -euo pipefail
+
+usage() {
+  print -u2 "Usage: importskill [-f|--force] <url-or-file>"
+  print -u2 "Imports a SKILL.md into ~/.pi/agent/skills/<skill-name>/SKILL.md"
+}
+
+force=0
+if [[ $# -gt 0 && ( "$1" == "-h" || "$1" == "--help" ) ]]; then
+  usage
+  exit 0
+fi
+if [[ $# -gt 0 && ( "$1" == "-f" || "$1" == "--force" ) ]]; then
+  force=1
+  shift
+fi
+if [[ $# -gt 0 && ( "$1" == "-h" || "$1" == "--help" ) ]]; then
+  usage
+  exit 0
+fi
+
+if [[ $# -ne 1 ]]; then
+  usage
+  exit 2
+fi
+
+src="$1"
+agent_dir="${PI_AGENT_DIR:-$HOME/.pi/agent}"
+skills_dir="${PI_SKILLS_DIR:-$agent_dir/skills}"
+tmpdir="$(mktemp -d)"
+trap 'rm -rf "$tmpdir"' EXIT
+
+is_url=0
+input=""
+if [[ "$src" == http://* || "$src" == https://* ]]; then
+  is_url=1
+  input="$tmpdir/SKILL.md"
+  curl -fL --retry 3 --connect-timeout 15 "$src" -o "$input"
+elif [[ -f "$src" ]]; then
+  input="${src:A}"
+else
+  print -u2 "importskill: not a URL or file: $src"
+  exit 1
+fi
+
+name="$(awk '
+  BEGIN { in_fm=0 }
+  NR == 1 && $0 == "---" { in_fm=1; next }
+  in_fm && $0 == "---" { exit }
+  in_fm && $0 ~ /^[[:space:]]*name[[:space:]]*:/ {
+    sub(/^[[:space:]]*name[[:space:]]*:[[:space:]]*/, "")
+    gsub(/^["'\'' ]+|["'\'' ]+$/, "")
+    print
+    exit
+  }
+' "$input")"
+
+if [[ -z "$name" ]]; then
+  base="${input:t}"
+  if [[ "$base" == "SKILL.md" ]]; then
+    name="${input:h:t}"
+  else
+    name="${base:r}"
+  fi
+fi
+
+slug="$(print -r -- "$name" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9._-]+/-/g; s/^-+//; s/-+$//')"
+if [[ -z "$slug" ]]; then
+  print -u2 "importskill: could not determine skill name from frontmatter or filename"
+  exit 1
+fi
+
+dest_dir="$skills_dir/$slug"
+dest="$dest_dir/SKILL.md"
+mkdir -p "$dest_dir"
+
+if [[ -e "$dest" && "$force" -ne 1 ]]; then
+  print -u2 "importskill: $dest already exists; rerun with --force to overwrite"
+  exit 1
+fi
+
+if [[ "$input" == "$dest" ]]; then
+  print "Already installed: $dest"
+  exit 0
+fi
+
+if [[ "$is_url" -eq 1 ]]; then
+  mv "$input" "$dest"
+else
+  mv "$input" "$dest"
+fi
+
+print "Imported skill '$slug' to $dest"

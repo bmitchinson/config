@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "sessions": {
+    "019e73d5-3ada-7061-830b-09a04c1ee674": {
+      "sessionId": "019e73d5-3ada-7061-830b-09a04c1ee674",
+      "cwd": "/Users/bmitchinson/repos/personal/roms-cleanup",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-roms-cleanup--/2026-05-29T13-03-34-618Z_019e73d5-3ada-7061-830b-09a04c1ee674.jsonl",
+      "updatedAt": "2026-05-29T22:48:36.973Z"
+    },
+    "019e7fbc-3828-78a1-b180-c580025be1e9": {
+      "sessionId": "019e7fbc-3828-78a1-b180-c580025be1e9",
+      "cwd": "/Users/bmitchinson/repos/personal/day",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-day--/2026-05-31T20-31-42-120Z_019e7fbc-3828-78a1-b180-c580025be1e9.jsonl",
+      "updatedAt": "2026-06-07T15:38:39.942Z"
+    },
+    "019e9058-77e9-7a60-bc57-083d37d9d0c5": {
+      "sessionId": "019e9058-77e9-7a60-bc57-083d37d9d0c5",
+      "cwd": "/Users/bmitchinson/repos/personal/practice",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-practice--/2026-06-04T01-56-17-513Z_019e9058-77e9-7a60-bc57-083d37d9d0c5.jsonl",
+      "updatedAt": "2026-06-04T01:56:17.523Z"
+    },
+    "019ea2bd-8592-7f85-9b87-b7d7aab49bb5": {
+      "sessionId": "019ea2bd-8592-7f85-9b87-b7d7aab49bb5",
+      "cwd": "/Users/bmitchinson/repos/personal/day",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-day--/2026-06-07T15-39-50-034Z_019ea2bd-8592-7f85-9b87-b7d7aab49bb5.jsonl",
+      "updatedAt": "2026-06-07T15:39:50.043Z"
+    },
+    "019ea323-7baf-7bcd-9426-ed16533cdc0e": {
+      "sessionId": "019ea323-7baf-7bcd-9426-ed16533cdc0e",
+      "cwd": "/Users/bmitchinson/repos/personal/day",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-day--/2026-06-07T17-31-12-175Z_019ea323-7baf-7bcd-9426-ed16533cdc0e.jsonl",
+      "updatedAt": "2026-06-07T17:31:12.184Z"
+    },
+    "019ea32d-6229-71cc-811a-c9a4c5baf460": {
+      "sessionId": "019ea32d-6229-71cc-811a-c9a4c5baf460",
+      "cwd": "/Users/bmitchinson/repos/personal/day",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-day--/2026-06-07T17-42-01-001Z_019ea32d-6229-71cc-811a-c9a4c5baf460.jsonl",
+      "updatedAt": "2026-06-07T17:42:01.020Z"
+    },
+    "019ea33c-ecb8-777b-9f7b-e09bff09c1fd": {
+      "sessionId": "019ea33c-ecb8-777b-9f7b-e09bff09c1fd",
+      "cwd": "/Users/bmitchinson/repos/personal/day",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-day--/2026-06-07T17-58-59-512Z_019ea33c-ecb8-777b-9f7b-e09bff09c1fd.jsonl",
+      "updatedAt": "2026-06-09T05:46:16.263Z"
+    },
+    "019eaaeb-3f51-7df7-8348-e6273377a3ab": {
+      "sessionId": "019eaaeb-3f51-7df7-8348-e6273377a3ab",
+      "cwd": "/Users/bmitchinson/repos/personal/day",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson-repos-personal-day--/2026-06-09T05-46-44-433Z_019eaaeb-3f51-7df7-8348-e6273377a3ab.jsonl",
+      "updatedAt": "2026-06-09T05:46:44.441Z"
+    },
+    "019f5327-b6ef-753c-92e0-7385efcc6ea8": {
+      "sessionId": "019f5327-b6ef-753c-92e0-7385efcc6ea8",
+      "cwd": "/Users/bmitchinson",
+      "sessionFile": "/Users/bmitchinson/.pi/agent/sessions/--Users-bmitchinson--/2026-07-11T21-48-59-503Z_019f5327-b6ef-753c-92e0-7385efcc6ea8.jsonl",
+      "updatedAt": "2026-07-11T21:48:59.554Z"
+    }
+  }
+}

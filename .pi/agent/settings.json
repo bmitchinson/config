@@ -1,0 +1,13 @@
+{
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-effort",
+    "npm:pi-scroll"
+  ],
+  "theme": "light",
+  "shellPath": "/bin/zsh",
+  "shellCommandPrefix": "export HERDR_ENV=1; source ~/.zshrc"
+}

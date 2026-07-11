@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo 'Usage: downloadyt [--audio | --audio-only] "youtube-url" ["destination"]'
+  echo '  default destination: $HOME/Movies/Concert Archives'
+  echo '  --audio downloads best audio and converts it to WAV'
+  echo '  --audio-only downloads best audio only, preserving the original codec/container'
+}
+
+mode="video"
+case "${1:-}" in
+  --audio|-a)
+    mode="audio_wav"
+    shift
+    ;;
+  --audio-only)
+    mode="audio_only"
+    shift
+    ;;
+  --help|-h)
+    usage
+    exit 0
+    ;;
+esac
+
+if [[ -z "${1:-}" ]]; then
+  usage
+  exit 2
+fi
+
+url="$1"
+dest="${2:-$HOME/Movies/Concert Archives}"
+dest="${dest/#\~/$HOME}"
+template='%(title)s [%(id)s].%(ext)s'
+
+case "$mode" in
+  audio_wav)
+    format='ba/b'
+    selection=$(yt-dlp --no-playlist -f "$format" --print "Title: %(title)s
+Selected audio: %(acodec)s %(abr|unknown)skbps
+Format: %(format_id)s
+Approx size: %(filesize_approx)B
+Destination: $dest/%(title)s [%(id)s].wav" "$url")
+    ;;
+  audio_only)
+    format='ba/b'
+    selection=$(yt-dlp --no-playlist -f "$format" --print "Title: %(title)s
+Selected audio: %(acodec)s %(abr|unknown)skbps
+Container: %(ext)s
+Format: %(format_id)s
+Approx size: %(filesize_approx)B
+Destination: $dest/$template" "$url")
+    ;;
+  video)
+    format='bv*+ba/b'
+    selection=$(yt-dlp --no-playlist -f "$format" --merge-output-format mkv --print "Title: %(title)s
+Selected: %(resolution)s %(fps&{}fps |)s%(dynamic_range|)s
+Video: %(vcodec)s
+Audio: %(acodec)s
+Format: %(format_id)s
+Approx size: %(filesize_approx)B
+Destination: $dest/$template" "$url")
+    ;;
+esac
+
+echo "$selection"
+echo
+read -r -p 'Download this? [y/N] ' reply
+case "$reply" in
+  [Yy]|[Yy][Ee][Ss])
+    case "$mode" in
+      audio_wav)
+        yt-dlp --no-playlist -f "$format" -x --audio-format wav -P "$dest" -o "$template" "$url"
+        ;;
+      audio_only)
+        yt-dlp --no-playlist -f "$format" -P "$dest" -o "$template" "$url"
+        ;;
+      video)
+        yt-dlp --no-playlist -f "$format" --merge-output-format mkv -P "$dest" -o "$template" "$url"
+        ;;
+    esac
+    ;;
+  *)
+    echo 'Cancelled.'
+    ;;
+esac
